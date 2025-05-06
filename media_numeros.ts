@@ -1,34 +1,30 @@
 // media.ts
-import * as readline from 'readline';
+import * as readline from "readline";
 
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout,
 });
 
 function calcularMedia(numeros: number[]): number {
-    const soma = numeros.reduce((acc, num) => acc + num, 0);
-    return soma / numeros.length;
+  const soma = numeros.reduce((acc, num) => acc + num, 0);
+  return soma / numeros.length;
 }
 
-rl.question('Digite o primeiro número: ', (input1) => {
-    const num1 = parseFloat(input1);
+rl.question("Digite o primeiro número: ", (input1) => {
+  const num1 = parseFloat(input1);
 
-    rl.question('Digite o segundo número: ', (input2) => {
-        const num2 = parseFloat(input2);
+  rl.question("Digite o segundo número: ", (input2) => {
+    const num2 = parseFloat(input2);
 
-        rl.question('Digite o terceiro número: ', (input3) => {
-            const num3 = parseFloat(input3);
-            const media = calcularMedia([num1, num2, num3]);
-            console.log(`A média de ${num1}, ${num2} e ${num3} é ${media}.`);
-            rl.close();
-        });
+    rl.question("Digite o terceiro número: ", (input3) => {
+      const num3 = parseFloat(input3);
+      const media = calcularMedia([num1, num2, num3]);
+      console.log(`A média de ${num1}, ${num2} e ${num3} é ${media.toFixed(2)}`);
+      rl.close();
     });
+  });
 });
-
-
-
-
 
 // Método reduce: O método reduce é uma função de array em JavaScript
 //  (e, por extensão, em TypeScript) que aplica uma função a um acumulador e a cada elemento do array (da esquerda para a direita) para reduzi-lo a um único valor.
